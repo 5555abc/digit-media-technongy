@@ -1,1 +1,64 @@
-> > > >>
+-----
+
+> 时间：2021-11-24
+
++  [httpbin](https://httpbin.org/)
++ [HttpBin 介绍](https://www.quchao.net/httpbin.html)
++ [curl安装](https://curl.se/windows/)
+
+-----
+
+### 1.HTTP Methods
+
+###   1.1GET请求
+
++ 不带参数的GET请求：
+
+测试的url：https://httpbin.org/get
+
+resquest（客户端）：Get https://httpbin.org/get HTTP1.1
+
++ 带参数请求：https://httpbin.org/get +？+参数1名称=参数1值+&+参数2名称=参数2值+...
+
+请求主体会带着？后面的参数访问服务端，服务端可以对参数进行对应的处理（例如浏览器查询内容之后进行反馈
+
+response（服务端）：
+
+> 1.response body（输出请求客户的请求信息Resqust Headers)：
+>
+> ```json
+> {
+>   "args": {},
+>   "headers": {
+>     "Accept": "application/json",
+>     "Accept-Encoding": "gzip, deflate, br",
+>     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+>     "Host": "httpbin.org",
+>     "Referer": "https://httpbin.org/",
+>     "Sec-Ch-Ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Microsoft Edge\";v=\"96\"",
+>     "Sec-Ch-Ua-Mobile": "?0",
+>     "Sec-Ch-Ua-Platform": "\"Windows\"",
+>     "Sec-Fetch-Dest": "empty",
+>     "Sec-Fetch-Mode": "cors",
+>     "Sec-Fetch-Site": "same-origin",
+>     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29",
+>     "X-Amzn-Trace-Id": "Root=1-619e1d2c-2a1869bb1e533db03f2a561f"
+>   },
+>   "origin": "61.242.54.108",
+>   "url": "https://httpbin.org/get"
+> }
+> ```
+
+> 2.response headers(服务端的HTTP特征描述)：
+>
+> ```tex
+> access-control-allow-credentials: true 
+>  access-control-allow-origin: * 
+>  content-length: 821 
+>  content-type: application/json 
+>  date: Wed, 24 Nov 2021 11:08:28 GMT 
+>  server: gunicorn/19.9.0 
+> ```
+
+
+
